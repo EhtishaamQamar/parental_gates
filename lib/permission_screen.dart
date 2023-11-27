@@ -11,6 +11,7 @@ class GetParentPermition extends StatefulWidget {
 
 class _GetParentPermitionState extends State<GetParentPermition> {
   List<String> oneToNine = [
+    "Zero",
     "One",
     "Two",
     "Three",
@@ -44,9 +45,9 @@ class _GetParentPermitionState extends State<GetParentPermition> {
     numberWord = [];
     ansNumber = [];
     for (int i = 0; i < 4; i++) {
-      int num = Random().nextInt(9) + 1;
+      int num = Random().nextInt(9);
       number.add(num);
-      numberWord.add(oneToNine[num - 1]);
+      numberWord.add(oneToNine[num]);
       ansNumber.add(null);
     }
     if (mounted) setState(() {});
@@ -201,6 +202,46 @@ class _GetParentPermitionState extends State<GetParentPermition> {
                                           ),
                                       ],
                                     ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      IgnorePointer(
+                                        ignoring: currentIndex > 3,
+                                        child: CustomButton(
+                                            child: const Text("0",
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                            onTap: () {
+                                              setState(() {
+                                                ansNumber[currentIndex] = 0;
+                                                checkSuccess();
+                                              });
+                                            }),
+                                      ),
+                                      IgnorePointer(
+                                        ignoring: currentIndex > 3,
+                                        child: CustomButton(
+                                            width: 120,
+                                            child: const Icon(
+                                              Icons.arrow_back,
+                                              color: Colors.blue,
+                                            ),
+                                            onTap: () {
+                                              setState(() {
+                                                if (currentIndex > 0) {
+                                                  currentIndex--;
+                                                  ansNumber[currentIndex] =
+                                                      null;
+                                                }
+                                              });
+                                            }),
+                                      ),
+                                    ],
+                                  )
                                 ],
                               ),
                             ),
@@ -215,7 +256,7 @@ class _GetParentPermitionState extends State<GetParentPermition> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 30.0, vertical: 30),
+                          /*horizontal: 30.0*/ vertical: 30),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
@@ -320,6 +361,44 @@ class _GetParentPermitionState extends State<GetParentPermition> {
                                         ),
                                     ],
                                   ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IgnorePointer(
+                                      ignoring: currentIndex > 3,
+                                      child: CustomButton(
+                                          child: const Text("0",
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold)),
+                                          onTap: () {
+                                            setState(() {
+                                              ansNumber[currentIndex] = 0;
+                                              checkSuccess();
+                                            });
+                                          }),
+                                    ),
+                                    IgnorePointer(
+                                      ignoring: currentIndex > 3,
+                                      child: CustomButton(
+                                          width: 120,
+                                          child: const Icon(
+                                            Icons.arrow_back,
+                                            color: Colors.blue,
+                                          ),
+                                          onTap: () {
+                                            setState(() {
+                                              if (currentIndex > 0) {
+                                                currentIndex--;
+                                                ansNumber[currentIndex] = null;
+                                              }
+                                            });
+                                          }),
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
                           )
@@ -338,12 +417,14 @@ class _GetParentPermitionState extends State<GetParentPermition> {
 class CustomButton extends StatelessWidget {
   final Widget child;
   final double buttonSize;
+  final double? width;
   final Function() onTap;
   const CustomButton({
     super.key,
     this.buttonSize = 60,
     required this.child,
     required this.onTap,
+    this.width,
   });
 
   @override
@@ -353,7 +434,7 @@ class CustomButton extends StatelessWidget {
       child: Container(
           alignment: Alignment.center,
           height: buttonSize,
-          width: buttonSize,
+          width: width ?? buttonSize,
           decoration: BoxDecoration(
               color: const Color(0xfff7f5ec),
               borderRadius: BorderRadius.circular(15),
