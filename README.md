@@ -1,5 +1,11 @@
 #   parental_gates
 A parental gate is a feature incorporated into apps in the Kids category to ensure that children cannot access commerce-related activities or external online content without the awareness and consent of their parent or guardian. The App Store Review Guidelines mandate the use of parental gates for these apps. To enhance their effectiveness, a recommended approach involves randomizing the questions and answers in the gate, preventing children from memorizing the responses. This safeguards the child's online experience, ensuring that they engage safely within the app. It's important to note that the parental gate requirement primarily focuses on preventing unauthorized access to certain features and content and is distinct from securing parental consent for collecting personal data from children, which is governed by separate regulations.
+
+
+<img src="https://github.com/deep260201/parental_gates/blob/main/Screenshort/varticle_scree.png" width="300" height="700">
+<img src="https://github.com/deep260201/parental_gates/blob/main/Screenshort/horizontel_scree.png" width="700" height="300">
+
+
 ## Reference
  https://developer.apple.com/app-store/kids-apps/
 ## A Flutter plugin for [Parental Gates](https://developer.apple.com/app-store/kids-apps/).
