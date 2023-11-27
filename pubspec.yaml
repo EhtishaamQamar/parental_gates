@@ -1,6 +1,6 @@
 name: parental_gates
 description: This package use for Parental Gates for kid game 
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/deep260201/parental_gates
 
 environment:
