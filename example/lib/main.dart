@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         home: Scaffold(
           body: Center(
               child: ElevatedButton(
-            child: Text("Permission"),
+            child: const Text("Permission"),
             onPressed: () {
               Permission.getPermission(
                 context: context,
