@@ -116,13 +116,13 @@ class _GetParentPermissionState extends State<GetParentPermission> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CustomButton(
+                                    /*CustomButton(
                                       buttonSize: 50,
                                       onTap: () {
                                         // Speak a message to ask for parent's permission
                                       },
                                       child: const Icon(Icons.volume_up_rounded),
-                                    ),
+                                    ),*/
                                     const Column(
                                       children: [
                                         Text(
@@ -297,11 +297,11 @@ class _GetParentPermissionState extends State<GetParentPermission> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    CustomButton(
+                                   /* CustomButton(
                                       buttonSize: 50,
                                       onTap: () {},
                                       child: const Icon(Icons.volume_up_rounded),
-                                    ),
+                                    ),*/
                                     const Column(
                                       children: [
                                         Text(
