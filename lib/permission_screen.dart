@@ -78,7 +78,7 @@ class _GetParentPermissionState extends State<GetParentPermission> {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Text(widget.message ?? "", style: const TextStyle(
         color: Colors.blue,
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: FontWeight.bold,
       ),),
     );
