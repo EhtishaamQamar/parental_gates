@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 // Custom widget to get parent permission
 class GetParentPermission extends StatefulWidget {
   const GetParentPermission({super.key});
+  final String? message;
+  const GetParentPermission({this.message, super.key});
 
   @override
   State<GetParentPermission> createState() => _GetParentPermissionState();
@@ -72,6 +74,14 @@ class _GetParentPermissionState extends State<GetParentPermission> {
   // Build the UI for the GetParentPermission widget
   @override
   Widget build(BuildContext context) {
+    final consentMessageWidget = Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Text(widget.message ?? "", style: const TextStyle(
+        color: Colors.blue,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),),
+    );
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color(0xfff7f5ec),
@@ -113,7 +123,8 @@ class _GetParentPermissionState extends State<GetParentPermission> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 // Parent permission message and current challenge
-                                Row(
+                                consentMessageWidget,
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     /*CustomButton(
@@ -288,13 +299,15 @@ class _GetParentPermissionState extends State<GetParentPermission> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           // Top part of portrait layout
+
+                          consentMessageWidget,
                           Expanded(
                             flex: 1,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 // Parent permission message and current challenge
-                                Row(
+                                const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                    /* CustomButton(
@@ -302,7 +315,7 @@ class _GetParentPermissionState extends State<GetParentPermission> {
                                       onTap: () {},
                                       child: const Icon(Icons.volume_up_rounded),
                                     ),*/
-                                    const Column(
+                                    Column(
                                       children: [
                                         Text(
                                           "   Ask your parents",

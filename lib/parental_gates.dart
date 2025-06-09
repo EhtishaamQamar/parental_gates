@@ -9,6 +9,7 @@ class Permission {
   // Static method to show a permission screen and handle success or failure
   static void getPermission({
     required BuildContext context,
+    String? consentMessage,
     void Function()? onSuccess,
     void Function()? onFail,
   }) {
@@ -16,7 +17,7 @@ class Permission {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const GetParentPermission(),
+        builder: (context) => GetParentPermission(message: consentMessage),
       ),
     ).then((value) {
       // Check the result from the permission screen
