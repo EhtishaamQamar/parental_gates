@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 // Custom widget to get parent permission
 class GetParentPermission extends StatefulWidget {
-  const GetParentPermission({super.key});
   final String? message;
   const GetParentPermission({this.message, super.key});
 
